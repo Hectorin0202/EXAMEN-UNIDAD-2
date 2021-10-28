@@ -1,0 +1,11 @@
+Realizar un programa que permita 
+    Mostrar Menu de menuOpciones
+    Registrar n bandas (Nombre, genero y año)
+    Permita registrar n album(Nombre, banda, año)
+    Permite registrar n canciones en album,nombre,duracion)
+
+Mostrar información por genero (Banda y albums)
+
+Mostrar información po album (Buscar album)
+Buscar cancion en especifico
+Mostrar Todo

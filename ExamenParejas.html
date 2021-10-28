@@ -1,0 +1,118 @@
+<script>
+
+    document.write("Programadores:" + "<b/>Alexandher Cordoba Molina." + "<b\> Hector Eduardo Zarate Ramirez.")
+    
+    var inicio;
+    inicio = alert("Debe insertar cuantas veses llenara la informacion de una banda.");
+    
+    var bandas; 
+    bandas = llenadoDebandas(parseInt(prompt("Numero de bandas")));
+    menuOpciones();
+    
+    
+    function llenadoDebandas(vecesDeLlenado){
+    
+    
+        for(i = 0; i < vecesDeLlenado; i++){
+            
+            let Banda = prompt("Ingrese el nombre de la banda.")
+            let Genero = prompt("Ingrese el genero musical")
+            let NombreAlbum = prompt("Inserte el nombre del album.")
+    
+            Conjunto = [];
+    
+            conjuntoBandas = {
+                Banda: Banda,
+                Genero: Genero,
+                "Año en que debuto la banda": prompt("Inserte el año en que se creo la banda."),
+                Nombredelalbum: NombreAlbum,
+                "Genero": Genero,
+                "Año de creacion": prompt("Inserte el año en que se creo el album."),
+                Nombredecanción : prompt("Inserte el nombre de la cancion."),
+                "Album al que pertenece": NombreAlbum,
+                "Duracion": prompt("Inserte la duracion de la cancion en cuestion.")    
+                    }
+                    Conjunto.push(conjuntoBandas);
+                    console.log(Conjunto);
+                }
+            }
+            
+        
+     
+            function cancionEspecifico(Conjunto) {
+              let Codigo = prompt("Ingrese la cancion del album");
+          
+              for (let i = 0; i < Conjunto.length; i++) {
+                  if (Conjunto[i].Nombredecanción == Codigo) {
+                      return Conjunto[i];
+                  }
+              }
+              
+          }
+    
+            function albumEspecifico(Conjunto) {
+              let Codigo = prompt("Ingrese el album");
+          
+              for (let i = 0; i < Conjunto.length; i++) {
+                  if (Conjunto[i].Nombredelalbum == Codigo) {
+                      return Conjunto[i];
+                  }
+              }
+              
+          }
+    
+            function bandaEspecifico(Conjunto) {
+              let Codigo = prompt("Ingrese la banda");
+          
+              for (let i = 0; i < Conjunto.length; i++) {
+                  if (Conjunto[i].Banda == Codigo) {
+                      return Conjunto[i];
+                  }
+              }
+              
+          }
+    
+    
+      
+          function menuOpciones(datoCompilado){
+          let mostrar = true;
+          
+              while (mostrar == true) {
+      
+                  let Opciones = parseInt(prompt("Menu de opciones." + 
+                  "\n1. Ingrese para una informacion por genero." + 
+                  "\n2. Ingrese para una informacion por album" + 
+                  "\n3. Cancion en especifico" +
+                  "\n4.Mostrar todo el contenido" +
+                  "\n5. Salir del programa."));
+      
+                  switch (Opciones) {
+                      case 1:
+                          console.log(bandaEspecifico(Conjunto));
+                          console.log(albumEspecifico(Conjunto));         
+                          break;
+                      case 2:
+                      console.log(albumEspecifico(Conjunto));
+                      console.log(cancionEspecifico(Conjunto));
+                          break;
+                      case 3:
+                      console.log(cancionEspecifico(Conjunto));
+                          break;
+                    case 4:
+                        alert("A continuacion se muestra el registro completo.")
+                    mostrar = false; 
+                        break;     
+                      case 5:
+                          alert("Saliendo del programa")
+                          mostrar = false;
+                          break;
+                      default:
+                          alert("Opcion no valida");
+                          break;
+                  }
+              }
+      }
+    
+    
+    
+    </script>
