@@ -1,0 +1,104 @@
+<script>
+
+document.write("Opcion 1 registrar banda" + " Opcion 2 registrar un album" + "Opcion 3 ingrese canciones");
+        
+var menu = prompt("¿Qué desea hacer?");
+var nCantidad = prompt("¿cuantas bandas vas a ingresar?");
+     switch (menu) {
+        case "1":
+            Bandas();
+        break;
+        case "2":
+            Album();
+            break;
+        case "3":
+            Canciones();
+            break;
+        }
+
+document.write("Opcion 1 registrar banda" + " Opcion 2 registrar un album" + "Opcion 3 ingrese canciones");
+var mostrar = prompt("¿que deseas hacer?")
+     switch (mostrar) {
+         case "1":
+            informacionGA();
+                let genero = prompt("Ingresa el genero que quieres consultar ");
+                     for(let i = 0; i < nCantidad.length; i++){
+                        if(alumnos[i].matricula == matricula){
+                            alert("Nombre: "+nCantidad[i].nombre+"\ngenero "+nCantidad[i].genero+"\naño: "+nCantidad[i].año);
+                        }
+                    }
+                break;
+            case "2":
+                
+                break;
+            case "3":
+             
+                break;
+            case "4":
+             
+                break;
+
+        }
+
+
+function Bandas() {
+    var i = 0;
+    while (i < nCantidad) {i++;
+            let nombre = prompt("ingresa el nombre de la banda");
+            var genero = prompt("¿Qué genero toca la banda?");
+                let año = prompt("¿En que año surgio la banda ?");
+                var datos = {
+                    nombre: nombre,
+                    genero: genero,
+                    año: año,
+                }
+                console.log(datos);
+                if (i == nCantidad) {
+                    break;
+                }
+
+            }
+        }
+
+
+function Album() {
+            let i = 0;
+            while (i < nCantidad) {
+                i++;
+                let nombre = prompt("nombre del album");
+                let banda = prompt("de que banda es el album");
+                let año = prompt("en que año salio el album ");
+                let dato = {
+                    nombre: nombre,
+                    banda: banda,
+                    año: año,
+                }
+                console.log(dato);
+                if (i == nCantidad) {
+                    break;
+                }
+            }
+        }
+function Canciones() {
+            let i = 0;
+            while (i < nCantidad) {
+                i++;
+                let album = prompt("nombre del album");
+                let nombre = prompt("nombre de la cancion ");
+                let duracion = prompt("cuanto dura la cancion");
+                let datos = {
+                    album: album,
+                    nombre: nombre,
+                    duracion: duracion,
+                }
+                console.log(datos);
+                if (i == nCantidad) {
+                    break;
+                }
+            }
+        }
+function informacionGA() {
+            console.log(genero)
+        }
+
+</script>
