@@ -1,0 +1,157 @@
+<script>
+document.write("Programadores:");
+document.write("<br/><br/>Alexandher Cordoba Molina.<br/>Hector Eduardo Zarate Ramirez.");
+
+    alert("Debe ingresar el numero de la opcion que desea realizar.")
+
+var anexo = "Todo el registro de datos: ";
+var todoElRegistro = [];
+
+var infoGenero = [];
+var infoAlbum = [];
+var infoCancion = [];  // --> Debo trabajar con este dato para mostrar la unica canción.
+
+var programa  = 1;
+while(programa == 1){
+
+	var numero = parseInt(prompt(
+	"1- Registro de banda." + 
+	"\n2- Registro de Album."+
+	"\n3- Registro de cancion."+
+	"\n4- Buscar una cancion." +
+	"\n5- Buscar un album." +
+	"\n6- Mostrar Todas las canciones." +
+	"\n7- Mostrar Todos los albumes." +
+	"\n8- Mostrar informacion por genero." +
+	"\n9- Mostrar todo." +
+	"\n10- Salir del programa.")
+	);
+
+var instruccion = numero;
+
+	switch (instruccion){
+		case 1:
+			var push1 = RegistroBandas();
+			todoElRegistro.push(push1);
+			console.log("Registro banda.")
+			console.log(push1)
+			programa -1;
+			break;
+
+		case 2:
+		    var push2 = RegistroAlbumes();
+			todoElRegistro.push(push2);
+			var opcion = prompt("Desea ingresar canciones en el album?? ingrese Si o No")
+
+			var operacion = opcion;
+			
+			if(operacion == "No"){
+				console.log("Registro album.")
+				console.log(push2)
+				programa -1;
+			}else if (operacion == "Si"){
+				var push21 = RegistroCanciones();
+				todoElRegistro.push(push21);
+				console.log("Registro del album.")
+				console.log(push2)
+				console.log(push21)
+			programa -1;
+			}
+			break;
+
+		case 3:
+		    var push3 = RegistroCanciones();
+			todoElRegistro.push(push3);
+			console.log("Registro canciones.")
+			console.log(push3)
+			programa -1;	
+		break;
+
+		case 4:
+		    var i = parseInt(prompt("Ingrese el numero de la cancion que quiere buscar."));
+			console.log("Cancion especifica;")
+			console.log(infoCancion[i - 1]);
+		break;
+
+		case 5:
+		    var x = parseInt(prompt("Ingrese el numero del album que quiere buscar."));
+			console.log("Album especifico;")
+			console.log(infoAlbum[x - 1]);
+		break;
+
+		case 6:
+		    console.log("Todas las canciones.");
+			console.log(infoCancion);
+		break;
+
+		case 7:
+		    console.log("Todos los albumes.");
+			console.log(infoAlbum);
+		case 8:
+		    console.log("Informacion por generos.");
+			console.log("Bandas: ",infoGenero);
+		break;
+
+		case 9:
+		    console.log(anexo)
+			console.log(todoElRegistro)
+		break;
+
+		case 10:
+			alert("Programa finalizado.")
+			programa = false;
+		break;			
+	}
+}
+
+// -------------------------------------------------------------------------------------------------
+
+function RegistroBandas(){
+
+	var conjunto1 = [];
+
+	var registro1 = {
+		"Nombre de la banda ": prompt("Ingrese el nombre de la banda."),
+		"Genero musical ": prompt("Ingrese el genero de la banda."),
+		"Ano debut ": prompt("Ingrese el año en que debuto la banda.")
+	}
+	conjunto1.push(registro1);
+	infoGenero.push(["Nombre: " + registro1["Nombre de la banda "],"Genero: " + registro1["Genero musical "]]);
+
+	return conjunto1;
+}
+
+// -------------------------------------------------------------------------------------------------
+
+function RegistroAlbumes(){
+	
+	var conjunto2 = [];
+	
+	var registro2 = {
+		"Nombre del album ": prompt("Ingrese el nombre del album."),
+		"Nombre de la banda ": prompt("Ingrese el nombre de la banda."),
+		"Ano de creacion ": prompt("Ingrese el año en que se creo el album.")
+	}
+	conjunto2.push(registro2);
+	infoAlbum.push(["Nombre: " + registro2["Nombre del album "],"Nombre de la banda: " + registro2["Nombre de la banda "]]);
+	
+	return conjunto2;
+}
+
+// -------------------------------------------------------------------------------------------------
+
+function RegistroCanciones(){
+	
+	var conjunto3 = [];
+	
+	var registro3 = {
+		"Nombre de la cancion ": prompt("Ingrese el nombre de la cancion."),
+		"Nombre del album ": prompt("Ingrese el nombre del album."),
+		"Duracion ": prompt("Ingrese el tiempo que dura la cancion.")
+	}
+	conjunto3.push(registro3);
+	infoCancion.push(registro3);
+	
+	return conjunto3;
+}
+</script>
